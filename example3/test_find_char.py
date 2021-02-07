@@ -20,7 +20,7 @@ from .self_work import split
     (("Hello world!!!", " "), ['Hello', 'world!!!']),
     (("Helloworld!!! ", " "), ['Helloworld!!!', '']),
 ])
-def test_normal_sum_int2(input_d, expected_output):
+def test_split(input_d, expected_output):
     result = split(input_d[0], input_d[1])
     print("input: {0}, output: {1}, expected: {2}".format(input_d, result, expected_output))
     assert result == expected_output
