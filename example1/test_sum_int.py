@@ -10,16 +10,12 @@ def test_string_sum_int():
     assert sum("1", 5) is None
 
 
-@pytest.fixture(params=[
+@pytest.mark.parametrize("input_d,expected_output", [
     ((1, 2), 3),
     ((2, 3), 5),
+    ((-2, 3), 1),
 ])
-def param_test(request):
-    return request.param
-
-
-def test_normal_sum_int2(param_test):
-    (input_d, expected_output) = param_test
+def test_normal_sum_int2(input_d, expected_output):
     result = sum(input_d[0], input_d[1])
     print("input: {0}, output: {1}, expected: {2}".format(input_d, result, expected_output))
     assert result == expected_output

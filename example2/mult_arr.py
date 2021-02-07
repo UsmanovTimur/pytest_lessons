@@ -5,6 +5,8 @@
 Выход: [2,4,6,8]
 """
 
+import pytest
+
 
 def mult_arr(arr):
     if not isinstance(arr, list):
@@ -13,6 +15,14 @@ def mult_arr(arr):
     for i in arr:
         output.append(i * 2)
     return output
+
+
+def test_normal_sum_int():
+    assert mult_arr([1, 5]) == [2, 10]
+
+
+def test_string_sum_int():
+    assert mult_arr(112233) is None
 
 
 if __name__ == "__main__":
